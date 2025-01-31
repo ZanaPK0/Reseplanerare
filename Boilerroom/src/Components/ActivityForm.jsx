@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
+
 
 function ActivityForm({heading}) {
   const [activity, setActivity] = useState("");
@@ -8,6 +10,12 @@ function ActivityForm({heading}) {
   const [isEditing, setIsEditing] = useState(false); // To track edit mode
   const [editIndex, setEditIndex] = useState(null); // Index of the activity being edited
   
+  useEffect(() => {
+    console.log("testEffect");
+  }, [activities]);
+
+
+
   // Handle edit button click
   const handleEdit = (index) => {
     const selectedActivity = activities[index];
@@ -52,6 +60,7 @@ function ActivityForm({heading}) {
       setPlace("");
 
   };
+
 
 
 
